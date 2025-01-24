@@ -19,7 +19,7 @@ export default function Categories() {
             .toLowerCase()
             .includes(searchText.toLowerCase());
 
-        const matchesActive = showActiveOnly ? category.isActive : true; // Se miran categorías activas
+        const matchesActive = showActive ? category.isActive : true; // Se miran categorías activas
 
         return matchesSearch && matchesActive; // Devolución de ambos resultados
     });
@@ -57,6 +57,9 @@ export default function Categories() {
             </header>
 
             <main>
+                {filteredCategories.length == 0 && (
+                    <p>Ops! No results were found</p>
+                )}
                 {filteredCategories.map((category) => (
                     <CategoryCard key={category.id} category={category} onToggle={handleToggle}/>
                 ))}
