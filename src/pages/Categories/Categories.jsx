@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { changeCategoryActiveStatus, fetchCategories } from "../../services/mockApi";
-import CategoryItem from "../../components/CategoryItem";
+import CategoryCard from "../../components/CategoryCard";
 import styles from "./styles.module.css"
 
 export default function Categories() {
     const [categories, setCategories] = useState([]); // Estado de las categorías
     const [searchText, setSearchText] = useState(""); // Estado de input de texto
-    const [showActiveOnly, setShowActiveOnly] = useState(false); // Estado del checkbox
+    const [showActive, setShowActive] = useState(false); // Estado del checkbox
 
     // Carga todas las categorías
     useEffect(() => {
@@ -49,8 +49,8 @@ export default function Categories() {
                 <div>
                     <input
                         type="checkbox"
-                        checked={showActiveOnly}
-                        onChange={(e) => setShowActiveOnly(e.target.checked)}
+                        checked={showActive}
+                        onChange={(e) => setShowActive(e.target.checked)}
                     />
                     <label>Filter Active Categories</label>
                 </div>
@@ -58,7 +58,7 @@ export default function Categories() {
 
             <main>
                 {filteredCategories.map((category) => (
-                    <CategoryItem key={category.id} category={category} onToggle={handleToggle}/>
+                    <CategoryCard key={category.id} category={category} onToggle={handleToggle}/>
                 ))}
             </main>
         </>
