@@ -26,15 +26,15 @@ export default function Categories() {
 
     // Función que actualiza "isActive en una categoría"
     const handleToggle = (id) => {
-        changeCategoryActiveStatus(id).then(response => console.log(response)); // Llamada a la API para cambiar el valor
-
-        // Actualizar el estado de la categoría modificada
         // los ... lo que hacen es recoger una copia del objeto actual y luego seteo su campo, si no va bien devuelvo la misma categoría
         setCategories((categories) =>
             categories.map((category) =>
                 category.id === id ? { ...category, isActive: !category.isActive } : category
             )
         );
+
+        // Actualizar el estado de la categoría modificada
+        changeCategoryActiveStatus(id).then(response => console.log(response)); // Llamada a la API para cambiar el valor
     }
 
     return (
