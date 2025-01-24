@@ -1,3 +1,7 @@
+.categoryContainer {
+    width: 100%;
+}
+
 .linksContainer {
     display: flex;
     flex-direction: row;

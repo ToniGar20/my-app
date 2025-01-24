@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export default function CategoryItem({ category, onToggle }) {
     return (
-        <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0" }}>
+        <div className={styles.categoryContainer} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0" }}>
             <h3>{category.pageTitle}</h3>
             <p>{category.content}</p>
             <p>Status: {category.isActive ? "Active" : "Inactive"}</p>

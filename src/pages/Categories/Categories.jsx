@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { changeCategoryActiveStatus, fetchCategories } from "../services/mockApi";
-import CategoryItem from "../components/CategoryItem";
+import { changeCategoryActiveStatus, fetchCategories } from "../../services/mockApi";
+import CategoryItem from "../../components/CategoryItem";
 import styles from "./styles.module.css"
 
 export default function Categories() {
