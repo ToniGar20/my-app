@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+:root {
+  --color-primary: #0692ce;
+  --color-secondary: #0058a2;
+
+  --color-grey: #797982FF;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -19,4 +26,13 @@ main {
   justify-self: center;
   padding: 16px;
   max-width: 890px;
+}
+
+button {
+  border-radius: 25px;
+  padding: 4px 8px;
+  background: var(--color-secondary);
+  color: white;
+  cursor: pointer;
+  border: 3px solid var(--color-grey);
 }
